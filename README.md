@@ -17,10 +17,15 @@ php symfony demo techlunch-symfony2
 Lancer le serveur HTTP et la base.
 
 Lancer l'application :
+http://localhost/techlunch-symfony2/web/fr
+
+
+Voir aussi
 http://localhost/techlunch-symfony2/web/fr/blog/
 
-Passer la base de données en Mysql
+<img alt="Page d'accueil" src="screenshots/page-accueil.png" width="600" />
 
+Passer la base de données sqlite à Mysql
 
 Ajout d'un bundle
 -----
