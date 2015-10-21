@@ -3,6 +3,8 @@
 {% block body_id 'blog_index' %}
 
 {% block main %}
+    {{ include('default/_flash_messages.html.twig') }}
+
     {% for post in posts %}
         <article class="post">
             <h2>

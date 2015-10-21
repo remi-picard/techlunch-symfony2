@@ -39,7 +39,11 @@ class AbonneController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('abonnement_show', array('id' => $entity->getId())));
+            //génération d'un message flash
+            $this->addFlash('success', 'Vous êtes à présent abonné.');
+
+            //redirection vers la liste des billets
+            return $this->redirect($this->generateUrl('blog_index', array('id' => $entity->getId())));
         }
 
         return array(

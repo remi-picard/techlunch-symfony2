@@ -312,6 +312,10 @@ C'est le conteneur de services qui se charge de l'instanciation et de l'injectio
 
 Enfin, on appelle le service lors de l'ajout d'un article sur le blog.
 
+### Ajout d'un message flash
+
+Suite à l'abonnement, on redirige l'utilisateur sur la liste des billets et on affiche un message de succès. 
+
 ## Documentation :
 * [Installer Symfony](http://symfony.com/doc/current/book/installation.html)
 * [Le conteneur de service](http://symfony.com/doc/current/book/service_container.html)
