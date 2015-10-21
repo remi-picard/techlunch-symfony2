@@ -207,19 +207,78 @@ Generating the entity code: OK
   You can now start using the generated code!
 ```
 
+
+Mise à jour de la base de données
+-----
+```cmd
+php app\console doctrine:schema:update --dump-sql
+```
+
+```cmd
+CREATE TABLE Abonne (id INT AUTO_INCREMENT NOT NULL, mail VARCHAR(255) NOT NULL, dateEnregistrement DATETIME NOT NULL, PRIMARY KEY(id)) DEFAUL
+T CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
+```
+
+```cmd
+php app\console doctrine:schema:update --force
+```
+
 Génération du crud
 -----
 ```cmd
 php app\console generate:doctrine:crud
 ```
 
-
-Mise à jour de la base de données
------
 ```cmd
-php app\console doctrine:schema:update --dump-sql
-php app\console doctrine:schema:update --force
+  Welcome to the Doctrine2 CRUD generator
+
+
+
+This command helps you generate CRUD controllers and templates.
+
+First, you need to give the entity for which you want to generate a CRUD.
+You can give an entity that does not exist yet and the wizard will help
+you defining it.
+
+You must use the shortcut notation like AcmeBlogBundle:Post.
+
+The Entity shortcut name: AbonnementBundle:Abonne
+
+By default, the generator creates two actions: list and show.
+You can also ask it to generate "write" actions: new, update, and delete.
+
+Do you want to generate the "write" actions [no]? yes
+
+Determine the format to use for the generated CRUD.
+
+Configuration format (yml, xml, php, or annotation) [annotation]:
+
+Determine the routes prefix (all the routes will be "mounted" under this
+prefix: /prefix/, /prefix/new, ...).
+
+Routes prefix [/abonne]: /abonnement
+
+
+  Summary before generation
+
+
+You are going to generate a CRUD controller for "AbonnementBundle:Abonne"
+using the "annotation" format.
+
+Do you confirm generation [yes]?
+
+
+  CRUD generation
+
+
+Generating the CRUD code: OK
+Generating the Form code: OK
+
+
+  You can now start using the generated code!
 ```
+
+
 
 Le conteneur de service
 -----
