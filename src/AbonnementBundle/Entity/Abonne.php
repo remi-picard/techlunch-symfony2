@@ -3,12 +3,16 @@
 namespace AbonnementBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Abonne
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AbonnementBundle\Entity\AbonneRepository")
+ * @UniqueEntity("mail", message="Cette adresse mail est déjà utilisée")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Abonne
 {
@@ -24,7 +28,12 @@ class Abonne
     /**
      * @var string
      *
-     * @ORM\Column(name="mail", type="string", length=255)
+     * @ORM\Column(name="mail", type="string", length=255, unique=true)
+     * @Assert\NotBlank(message = "L'adresse mail doit être renseignée")
+     * @Assert\Email(
+     *     message = "L'adresse mail '{{ value }}' n'est pas valide.",
+     *     checkMX = true
+     * )
      */
     private $mail;
 
@@ -90,5 +99,13 @@ class Abonne
     public function getDateEnregistrement()
     {
         return $this->dateEnregistrement;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setDateEnregistrementValue()
+    {
+        $this->dateEnregistrement = new \DateTime();
     }
 }

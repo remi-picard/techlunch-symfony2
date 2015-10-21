@@ -278,7 +278,37 @@ Generating the Form code: OK
   You can now start using the generated code!
 ```
 
+L'URL http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/ est maintenant disponible.
 
+Formulaire d'ajout : 
+<img alt="Page d'accueil" src="screenshots/abonne-creation.png" width="600" />
+
+Liste des éléments ajoutés :
+<img alt="Page d'accueil" src="screenshots/abonne-liste.png" width="600" />
+
+
+Ajout de la validation
+-----
+
+On ajoute les annotations de validation de format, d'unicité et l'ajout d'événement sur l'entité Abonne.
+
+Mettre à jour la base pour prendre en compte la contrainte d'unicité :
+```cmd
+techlunch-symfony2>php app\console doctrine:schema:update --dump-sql
+```
+
+```cmd
+CREATE UNIQUE INDEX UNIQ_719E8EC65126AC48 ON abonne (mail);
+```
+
+```cmd
+techlunch-symfony2>php app\console doctrine:schema:update --force
+```
+
+Retourner sur le formulaire http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/new et saisisser une adresse mail déjà existante :
+
+
+<img alt="Page d'accueil" src="screenshots/abonne-creation-unicite.png" width="600" />
 
 Le conteneur de service
 -----
