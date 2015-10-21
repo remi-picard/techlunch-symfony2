@@ -16,7 +16,6 @@ class AbonneType extends AbstractType
     {
         $builder
             ->add('mail')
-            ->add('dateEnregistrement')
         ;
     }
     

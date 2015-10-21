@@ -9,6 +9,11 @@
 
 {% block header_navigation_links %}
     <li>
+        <a href="{{ path('admin_abonnement') }}">
+            <i class="fa fa-bell"></i> {{ 'menu.abonne_list'|trans }}
+        </a>
+    </li>
+    <li>
         <a href="{{ path('admin_post_index') }}">
             <i class="fa fa-list-alt"></i> {{ 'menu.post_list'|trans }}
         </a>

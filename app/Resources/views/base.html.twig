@@ -56,6 +56,11 @@
                                             <i class="fa fa-home"></i> {{ 'menu.homepage'|trans }}
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="{{ path('abonnement_new') }}">
+                                            <i class="fa fa-bell"></i> {{ 'menu.abonnement'|trans }}
+                                        </a>
+                                    </li>
 
                                     {# The 'app.user' condition is required to avoid issues in 404 and 500 error pages
                                        As routing is done before security, error pages are not covered by any firewall.

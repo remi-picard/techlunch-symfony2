@@ -78,38 +78,12 @@ you generate them easily.
 
 Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).
 
-The namespace should begin with a "vendor" name like your company name
-, your
-project name, or your client name, followed by one or more optional ca
-tegory
-sub-namespaces, and it should end with the bundle name itself
-(which must have Bundle as a suffix).
-
-See http://symfony.com/doc/current/cookbook/bundles/best_practices.htm
-l#index-1 for more
-details on bundle naming conventions.
-
-Use / instead of \  for the namespace delimiter to avoid any problem.
-
 Bundle namespace: AbonnementBundle
-
-The namespace sometimes contain a vendor namespace (e.g. VendorName/Bl
-ogBundle instead of simply AbonnementBundle).
-If you've *did* type a vendor namespace, try using a forward slash / (
-Acme/BlogBundle)?
 
 Keep AbonnementBundle as the bundle namespace (choose no to try again)
 ? [yes]: yes
 
-In your code, a bundle is often referenced by its name. It can be the
-concatenation of all namespace parts but it's really up to you to come
-up with a unique name (a good practice is to start with the vendor name).
-Based on the namespace, we suggest AbonnementBundle.
-
 Bundle name [AbonnementBundle]:
-
-The bundle can be generated anywhere. The suggested default directory uses
-the standard conventions.
 
 Target directory [C:\wamp\www\techlunch-symfony2/src]:
 
@@ -322,15 +296,20 @@ Prise en compte de la locale dans les routes.
 
 Ne pas oublier de renommer toutes les routes pour ne pas avoir de conflits entre les 2 contrôleurs.
 
-Le conteneur de service
-----
-http://symfony.com/doc/current/book/service_container.html
+On a maintenant l'abonnement accessible à tous via http://localhost/techlunch-symfony2/web/app_dev.php/fr/abonnement/
 
-The service container helps you instantiate, organize and retrieve the many objects of your application.
-The container makes your life easier, is super fast, and emphasizes an architecture that promotes reusable and decoupled code.
+Et la gestion des abonnés via http://localhost/techlunch-symfony2/web/app_dev.php/fr/admin/abonnement/
 
-In large part, the service container is the biggest contributor to the speed and extensibility of Symfony.
 
-Envoyer un mail
+Modification des vues
 -----
+
+Modification du layout, des vues et des fichiers traduction
+
+
+Ajouter un service d'envoi de mail
+----
+
+Ref :
+http://symfony.com/doc/current/book/service_container.html
 http://symfony.com/doc/current/cookbook/email/email.html

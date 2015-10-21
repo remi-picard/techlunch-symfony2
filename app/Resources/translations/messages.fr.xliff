@@ -162,6 +162,10 @@
                 <source>menu.post_list</source>
                 <target>Liste des articles</target>
             </trans-unit>
+            <trans-unit id="menu.abonne_list">
+                <source>menu.abonne_list</source>
+                <target>Liste des abonnés</target>
+            </trans-unit>
             <trans-unit id="menu.back_to_blog">
                 <source>menu.back_to_blog</source>
                 <target>Retour au blog</target>
@@ -169,6 +173,10 @@
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
                 <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="menu.abonnement">
+                <source>menu.abonnement</source>
+                <target>S'abonner</target>
             </trans-unit>
             <trans-unit id="menu.admin">
                 <source>menu.admin</source>
