@@ -1,7 +1,11 @@
 abonnement:
     resource: "@AbonnementBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+        _locale: %app_locales%
+    defaults:
+        _locale: %locale%
 
 # These first lines load the all routes defined as @Route() annotations in any
 # controller defined inside the src/AppBundle/Controller/ directory. Controllers

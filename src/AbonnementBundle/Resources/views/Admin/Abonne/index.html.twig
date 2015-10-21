@@ -15,16 +15,16 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('abonnement_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('admin_abonnement_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.mail }}</td>
                 <td>{% if entity.dateEnregistrement %}{{ entity.dateEnregistrement|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('abonnement_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('admin_abonnement_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('abonnement_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('admin_abonnement_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -35,7 +35,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('abonnement_new') }}">
+            <a href="{{ path('admin_abonnement_new') }}">
                 Create a new entry
             </a>
         </li>

@@ -310,8 +310,20 @@ Retourner sur le formulaire http://localhost/techlunch-symfony2/web/app_dev.php/
 
 <img alt="Page d'accueil" src="screenshots/abonne-creation-unicite.png" width="600" />
 
-Le conteneur de service
+
+Modification des routes
 -----
+Créer une controleur Abonnement pour la partie ADMIN (/admin/abonnement).
+Ne laisser que l'action de création dans le controleur accessible à tous (/abonnement).
+
+Mise à jour des routes du bundle et ajout du contrôleur Abonnement partie ADMIN.
+
+Prise en compte de la locale dans les routes.
+
+Ne pas oublier de renommer toutes les routes pour ne pas avoir de conflits entre les 2 contrôleurs.
+
+Le conteneur de service
+----
 http://symfony.com/doc/current/book/service_container.html
 
 The service container helps you instantiate, organize and retrieve the many objects of your application.
