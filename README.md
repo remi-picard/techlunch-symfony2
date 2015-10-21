@@ -2,8 +2,10 @@
 
 ## Installation
 [Télécharger Symfony2](https://symfony.com/download)
+
 Cloner le [repository github](https://github.com/symfony/symfony-demo)
-ou utiliser l'installeur symfony
+
+ou utiliser l'installeur symfony : 
 ```cmd
 cd C:\wamp\www
 php -r "readfile('http://symfony.com/installer');" > symfony
@@ -23,8 +25,9 @@ Le premier chargement est assez long, Symfony construit le cache de l'applicatio
 
 
 Passer la base de données sqlite à Mysql en modifiant le fichier app/config/parameter.yml en s'inspirant du fichier app/config/parameter.yml.dist
-Par exemple
-```mon app/config/parameter.yml
+
+Exemple de fichier app/config/parameter.yml
+``` 
 parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
