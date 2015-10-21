@@ -11,6 +11,7 @@
 
 namespace AppBundle\Controller\Admin;
 
+use AbonnementBundle\Model\Notification;
 use AppBundle\Form\PostType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -86,6 +87,11 @@ class BlogController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
+
+            //On envoie un mail de notification à tous les abonnés
+            $notificationService = $this->get('notification_manager');
+            $urlNouveauPost = $this->generateUrl('blog_post', array('slug' => $post->getSlug()));
+            $notificationService->envoyerMailTousLesAbonnes(new Notification($post->getTitle(), $post->getSummary(), $urlNouveauPost));
 
             // Flash messages are used to notify the user about the result of the
             // actions. They are deleted automatically from the session as soon

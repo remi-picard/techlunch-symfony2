@@ -43,3 +43,14 @@ services:
     #
     # // same code using repository services
     # $posts = $this->get('app.post_repository')->findAll();
+
+    abonne_repo:
+        class:     AbonnementBundle\Entity\AbonneRepository
+        factory: [@doctrine.orm.entity_manager, getRepository]
+        arguments:
+            - AbonnementBundle\Entity\Abonne
+
+    #On injecte les dépendances du service
+    notification_manager:
+        class:     AbonnementBundle\Service\NotificationManager
+        arguments: [@service_container, @mailer, @templating, @abonne_repo, %mailer_user%, %mail_subject%]

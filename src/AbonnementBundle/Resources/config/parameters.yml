@@ -1,0 +1,2 @@
+parameters:
+    mail_subject: "[Techlunch Symfony 2] Un nouveau post vient d'arriver : {SUJET}"

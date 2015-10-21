@@ -1,13 +1,8 @@
-Techlunch Symfony 2
-====================
+# Techlunch Symfony 2
 
-Installation
-------------
-https://symfony.com/download
-http://symfony.com/doc/current/book/installation.html
-
-
-Cloner le repository github https://github.com/symfony/symfony-demo
+## Installation
+[Télécharger Symfony2](https://symfony.com/download)
+Cloner le [repository github](https://github.com/symfony/symfony-demo)
 ou utiliser l'installeur symfony
 ```cmd
 cd C:\wamp\www
@@ -15,14 +10,14 @@ php -r "readfile('http://symfony.com/installer');" > symfony
 php symfony demo techlunch-symfony2
 ```
 
-Lancer le serveur HTTP et la base.
+Lancer le serveur HTTP et la base (ex : WAMP).
 
 Lancer l'application :
-http://localhost/techlunch-symfony2/web/app_dev.php/fr
+<http://localhost/techlunch-symfony2/web/app_dev.php/fr>
 <img alt="Page d'accueil" src="screenshots/page-accueil.png" width="600" />
 
 Voir aussi
-http://localhost/techlunch-symfony2/web/app_dev.php/fr/blog/
+<http://localhost/techlunch-symfony2/web/app_dev.php/fr/blog/>
 
 Le premier chargement est assez long, Symfony construit le cache de l'application.
 
@@ -56,13 +51,13 @@ Recharger les données
 ```cmd
 php app/console doctrine:fixtures:load
 ```
-Cette commande est rappelée sur http://localhost/techlunch-symfony2/web/app_dev.php/fr/login
+Cette commande est rappelée sur <http://localhost/techlunch-symfony2/web/app_dev.php/fr/login>
 
-Retourner sur http://localhost/techlunch-symfony2/web/app_dev.php/fr/blog/
+Retourner sur <http://localhost/techlunch-symfony2/web/app_dev.php/fr/blog/>
 Les articles apparaissent à nouveau.
 
-Ajout d'un bundle
------
+## Mon premier bundle
+### Génération en ligne de commande
 ```cmd
 php app\console generate:bundle
 ```
@@ -121,8 +116,8 @@ Importing the bundle routing resource: OK
 ```
 
 
-Génération d'une entité
------
+### Génération d'une entité Doctrine
+
 ```cmd
 php app\console generate:doctrine:entity
 ```
@@ -182,8 +177,7 @@ Generating the entity code: OK
 ```
 
 
-Mise à jour de la base de données
------
+### Mise à jour de la base de données
 ```cmd
 php app\console doctrine:schema:update --dump-sql
 ```
@@ -197,8 +191,7 @@ T CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
 php app\console doctrine:schema:update --force
 ```
 
-Génération du crud
------
+### Génération d'un CRUD
 ```cmd
 php app\console generate:doctrine:crud
 ```
@@ -252,7 +245,7 @@ Generating the Form code: OK
   You can now start using the generated code!
 ```
 
-L'URL http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/ est maintenant disponible.
+L'URL <http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/> est maintenant disponible.
 
 Formulaire d'ajout : 
 <img alt="Page d'accueil" src="screenshots/abonne-creation.png" width="600" />
@@ -261,8 +254,8 @@ Liste des éléments ajoutés :
 <img alt="Page d'accueil" src="screenshots/abonne-liste.png" width="600" />
 
 
-Ajout de la validation
------
+### Ajout de la validation de formulaire
+
 
 On ajoute les annotations de validation de format, d'unicité et l'ajout d'événement sur l'entité Abonne.
 
@@ -285,8 +278,8 @@ Retourner sur le formulaire http://localhost/techlunch-symfony2/web/app_dev.php/
 <img alt="Page d'accueil" src="screenshots/abonne-creation-unicite.png" width="600" />
 
 
-Modification des routes
------
+### Modification des routes
+
 Créer une controleur Abonnement pour la partie ADMIN (/admin/abonnement).
 Ne laisser que l'action de création dans le controleur accessible à tous (/abonnement).
 
@@ -301,15 +294,22 @@ On a maintenant l'abonnement accessible à tous via http://localhost/techlunch-s
 Et la gestion des abonnés via http://localhost/techlunch-symfony2/web/app_dev.php/fr/admin/abonnement/
 
 
-Modification des vues
------
+### Modification des vues
+
 
 Modification du layout, des vues et des fichiers traduction
 
 
-Ajouter un service d'envoi de mail
-----
+### Ajout d'un service d'envoi de mail
 
-Ref :
-http://symfony.com/doc/current/book/service_container.html
-http://symfony.com/doc/current/cookbook/email/email.html
+On ajoute un objet de modèle et un service d'envoi de mail. 
+
+Ce service a besoin d'autres services pour pouvoir fonctionner.
+C'est le conteneur de services qui se charge de l'instanciation et de l'injection des services.
+
+Enfin, on appelle le service lors de l'ajout d'un article sur le blog.
+
+## Documentation :
+* [Installer Symfony](http://symfony.com/doc/current/book/installation.html)
+* [Le conteneur de service](http://symfony.com/doc/current/book/service_container.html)
+* [Comment envoyer un mail avec Symfony ?](http://symfony.com/doc/current/cookbook/email/email.html)

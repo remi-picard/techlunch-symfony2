@@ -53,7 +53,7 @@ class AbonneController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('abonnement_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_abonnement_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -72,7 +72,7 @@ class AbonneController extends Controller
     private function createCreateForm(Abonne $entity)
     {
         $form = $this->createForm(new AbonneType(), $entity, array(
-            'action' => $this->generateUrl('abonnement_create'),
+            'action' => $this->generateUrl('admin_abonnement_create'),
             'method' => 'POST',
         ));
 
@@ -161,7 +161,7 @@ class AbonneController extends Controller
     private function createEditForm(Abonne $entity)
     {
         $form = $this->createForm(new AbonneType(), $entity, array(
-            'action' => $this->generateUrl('abonnement_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('admin_abonnement_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -193,7 +193,7 @@ class AbonneController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('abonnement_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_abonnement_edit', array('id' => $id)));
         }
 
         return array(
@@ -225,7 +225,7 @@ class AbonneController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('abonnement'));
+        return $this->redirect($this->generateUrl('admin_abonnement'));
     }
 
     /**
@@ -238,7 +238,7 @@ class AbonneController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('abonnement_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_abonnement_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
