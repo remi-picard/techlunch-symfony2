@@ -16,7 +16,7 @@ Lancer le serveur HTTP et la base (ex : WAMP).
 
 Lancer l'application :
 <http://localhost/techlunch-symfony2/web/app_dev.php/fr>
-<img alt="Page d'accueil" src="screenshots/page-accueil.png" width="600" />
+<img alt="Page d'accueil" src="screenshots/page-accueil.png" width="800" />
 
 Voir aussi
 <http://localhost/techlunch-symfony2/web/app_dev.php/fr/blog/>
@@ -251,10 +251,10 @@ Generating the Form code: OK
 L'URL <http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/> est maintenant disponible.
 
 Formulaire d'ajout : 
-<img alt="Page d'accueil" src="screenshots/abonne-creation.png" width="600" />
+<img alt="Page d'ajout d'un abonné" src="screenshots/page-abonne-creation.png" width="800" />
 
 Liste des éléments ajoutés :
-<img alt="Page d'accueil" src="screenshots/abonne-liste.png" width="600" />
+<img alt="Page de la liste des abonnés" src="screenshots/page-abonne-liste.png" width="800" />
 
 
 ### Ajout de la validation de formulaire
@@ -278,7 +278,7 @@ techlunch-symfony2>php app\console doctrine:schema:update --force
 Retourner sur le formulaire http://localhost/techlunch-symfony2/web/app_dev.php/abonnement/new et saisisser une adresse mail déjà existante :
 
 
-<img alt="Page d'accueil" src="screenshots/abonne-creation-unicite.png" width="600" />
+<img alt="Page validation formulaire en erreur" src="screenshots/page-abonne-creation-unicite.png" width="800" />
 
 
 ### Modification des routes
