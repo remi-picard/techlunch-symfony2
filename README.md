@@ -1,4 +1,4 @@
-Tech Lunch Symfony 2
+Techlunch Symfony 2
 ====================
 
 Installation
@@ -8,7 +8,7 @@ http://symfony.com/doc/current/book/installation.html
 
 
 Cloner le repository github https://github.com/symfony/symfony-demo
-ou
+ou utiliser l'installeur symfony
 ```cmd
 cd C:\wamp\www
 php -r "readfile('http://symfony.com/installer');" > symfony
@@ -64,21 +64,152 @@ Les articles apparaissent à nouveau.
 Ajout d'un bundle
 -----
 ```cmd
-cd techlunch-symfony2/
 php app\console generate:bundle
 ```
+
+
+```cmd
+  Welcome to the Symfony2 bundle generator
+
+
+
+Your application code must be written in bundles. This command helps
+you generate them easily.
+
+Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).
+
+The namespace should begin with a "vendor" name like your company name
+, your
+project name, or your client name, followed by one or more optional ca
+tegory
+sub-namespaces, and it should end with the bundle name itself
+(which must have Bundle as a suffix).
+
+See http://symfony.com/doc/current/cookbook/bundles/best_practices.htm
+l#index-1 for more
+details on bundle naming conventions.
+
+Use / instead of \  for the namespace delimiter to avoid any problem.
+
+Bundle namespace: AbonnementBundle
+
+The namespace sometimes contain a vendor namespace (e.g. VendorName/Bl
+ogBundle instead of simply AbonnementBundle).
+If you've *did* type a vendor namespace, try using a forward slash / (
+Acme/BlogBundle)?
+
+Keep AbonnementBundle as the bundle namespace (choose no to try again)
+? [yes]: yes
+
+In your code, a bundle is often referenced by its name. It can be the
+concatenation of all namespace parts but it's really up to you to come
+up with a unique name (a good practice is to start with the vendor name).
+Based on the namespace, we suggest AbonnementBundle.
+
+Bundle name [AbonnementBundle]:
+
+The bundle can be generated anywhere. The suggested default directory uses
+the standard conventions.
+
+Target directory [C:\wamp\www\techlunch-symfony2/src]:
+
+Determine the format to use for the generated configuration.
+
+Configuration format (yml, xml, php, or annotation): annotation
+
+To help you get started faster, the command can generate some
+code snippets for you.
+
+Do you want to generate the whole directory structure [no]? yes
+
+
+  Summary before generation
+
+
+You are going to generate a "AbonnementBundle\AbonnementBundle" bundle
+in "C:\wamp\www\techlunch-symfony2/src/" using the "annotation" format.
+
+Do you confirm generation [yes]?
+
+
+  Bundle generation
+
+
+Generating the bundle code: OK
+Checking that the bundle is autoloaded: OK
+Confirm automatic update of your Kernel [yes]?
+Enabling the bundle inside the Kernel: OK
+Confirm automatic update of the Routing [yes]?
+Importing the bundle routing resource: OK
+
+
+  You can now start using the generated code!
+```
+
 
 Génération d'une entité
 -----
 ```cmd
-cd symfony-demo/
 php app\console generate:doctrine:entity
+```
+
+
+```cmd
+  Welcome to the Doctrine2 entity generator
+
+
+
+This command helps you generate Doctrine2 entities.
+
+First, you need to give the entity name you want to generate.
+You must use the shortcut notation like AcmeBlogBundle:Post.
+
+The Entity shortcut name: AbonnementBundle:Abonne                                                                                             
+
+Determine the format to use for the mapping information.
+
+Configuration format (yml, xml, php, or annotation) [annotation]:
+
+Instead of starting with a blank entity, you can add some fields now.
+Note that the primary key will be added automatically (named id).
+
+Available types: array, simple_array, json_array, object,
+boolean, integer, smallint, bigint, string, text, datetime, datetimetz,
+date, time, decimal, float, binary, blob, guid.
+
+New field name (press <return> to stop adding fields): mail
+Field type [string]:
+Field length [255]:
+
+New field name (press <return> to stop adding fields): dateEnregistrement
+Field type [string]: datetime
+
+New field name (press <return> to stop adding fields):
+
+Do you want to generate an empty repository class [no]? yes
+
+
+  Summary before generation
+
+
+You are going to generate a "AbonnementBundle:Abonne" Doctrine2 entity
+using the "annotation" format.
+
+Do you confirm generation [yes]?
+
+
+  Entity generation
+
+
+Generating the entity code: OK
+
+
+  You can now start using the generated code!
 ```
 
 Génération du crud
 -----
 ```cmd
-cd symfony-demo/
 php app\console generate:doctrine:crud
 ```
 
